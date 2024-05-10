@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Tolist.css">
+</head>
+
+<body>
+    <header id="headerTodolist">
+        <h1>Todo List</h1>
+    </header>
+
+    <main>
+        <form name="meu-form" onsubmit="enviar(event)">
+            <div class="form-field">
+                <input type="text" name="tarefa" placeholder="Informe o titulo da tarefa" />
+            </div>
+            <div class="form-descricao">
+                <input type="text" name="descricao" placeholder="informe a descricao da tarefa" />
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <div id="lista-tarefas">
+        <!-- Aqui as tarefas serão adicionadas dinamicamente pelo JavaScript -->
+    </div>
+
+    <footer aria-label="Rodapé">
+        <p aria-label="Copyright">
+            &copy; 2024 Todo List.
+        </p>
+    </footer>
+    <script src="Tolist.js"></script>
+
+</body>
+
+</html>

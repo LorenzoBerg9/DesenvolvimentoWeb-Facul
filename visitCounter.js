@@ -1,31 +1,45 @@
-function updateVisitCounter() {
-    let visitData = localStorage.getItem('visitData');
-    if (!visitData) {
-        visitData = { count: 0, lastVisit: new Date().toLocaleString() };
-    } else {
-        visitData = JSON.parse(visitData);
-        visitData.count++;
-        visitData.lastVisit = new Date().toLocaleString();
-    }
-    localStorage.setItem('visitData', JSON.stringify(visitData));
+const lsVisistorsKey = '@visitorsCounter'
+
+const defaultLsVisitors = {
+    count: 0,
+    lastVisit: getCurrentDateAndTime(),
 }
 
-function displayVisitInfo() {
-    const visitData = JSON.parse(localStorage.getItem('visitData'));
-    if (visitData) {
-        const visitInfo = `Esta página foi visitada ${visitData.count} vezes. A última visita foi: ${visitData.lastVisit}`;
-        const footer = document.querySelector('footer');
-        const p = document.createElement('p');
-        p.textContent = visitInfo;
-        footer.appendChild(p);
-    } else {
-        console.log("Nenhuma informação de visita encontrada.");
+function getCurrentDateAndTime() {
+    const locale = 'pt-BR'
+    const date = new Date()
+
+    options = {
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
     }
+
+    const time = new Intl.DateTimeFormat(locale, options).format(date)
+    return time
+}
+
+function countVisitors() {
+    const lsVisitors =
+        localStorage.getItem(lsVisistorsKey) || JSON.stringify(defaultLsVisitors)
+    const lsVisitorsObj = JSON.parse(lsVisitors)
+
+    lsVisitorsObj.count++
+    lsVisitorsObj.lastVisit = getCurrentDateAndTime()
+
+    localStorage.setItem(lsVisistorsKey, JSON.stringify(lsVisitorsObj))
+
+    const p = document.createElement('p')
+    p.id = 'visitors-counter'
+    p.textContent = `Esta página foi visitada ${lsVisitorsObj.count} vezes. A última visita foi: ${lsVisitorsObj.lastVisit}`
+
+    const footer = document.querySelector('footer')
+
+    footer.appendChild(p)
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    updateVisitCounter(); // Atualiza o contador de visitas sempre que a página é carregada
-    displayVisitInfo();
-});
-
-
+    countVisitors()
+})

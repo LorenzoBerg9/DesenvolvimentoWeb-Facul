@@ -1,0 +1,120 @@
+/* Reset de estilos para garantir consistência em diferentes navegadores */
+body,
+h1,
+h2,
+p,
+ul,
+ol,
+li,
+figure,
+table,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: auto;
+}
+
+header {
+    background-color: #f4f4f4;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: auto;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+.form-field,
+.form-descricao {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+}
+
+button {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    color: white;
+    background-color: #0074d9;
+    width: 100px;
+}
+
+#lista-tarefas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 30px;
+
+}
+
+.tarefa {
+    border: 1px solid #000000;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 400px;
+
+}
+
+.titulo {
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+
+.descricao {
+    color: #000000;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
