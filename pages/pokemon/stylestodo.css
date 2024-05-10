@@ -1,0 +1,114 @@
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+header h1 {
+    font-size: 24px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}
+
+/* Adicionar tarefa */
+#todo-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#todo-list {
+    text-align: left;
+    /* Alinha o texto das tarefas à esquerda */
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a[href*='#'] {
+    color: white;
+}
+
+footer a[href*='mailto'] {
+    color: orangered;
+}
+
+footer a[href*='tel'] {
+    color: limegreen;
+}
+
+footer a[href]:hover {
+    opacity: 0.8;
+}
+
+#todo-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#todo-form input[type="text"],
+#todo-form button {
+    margin-bottom: 10px;
+}
+
+#todo-form button {
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#todo-form button:hover {
+    background-color: #0056b3;
+}
+
+#todo-form input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
