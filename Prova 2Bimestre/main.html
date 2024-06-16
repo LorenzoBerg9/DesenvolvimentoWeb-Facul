@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Notícias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Portal de Notícias do IBGE</h1>
+        <form class="search-form" action="#" method="GET">
+            <div class="search-container">
+                <input type="text" placeholder="Buscar..." name="search" id="search-input">
+                <button type="submit">🔍</button>
+            </div>
+        </form>
+        <div class="filter-icon-container" onclick="toggleModal()">
+            <svg width="20" height="20" fill="#f0f0f0" viewBox="0 0 80 90" focusable="false"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z"></path>
+            </svg>
+            <span id="filter-count" class="filter-count">0</span>
+        </div>
+    </header>
+    
+    <main id="news-container">
+        <ul id="news-list"></ul>
+        <ul id="pagination" class="pagination"></ul>
+    </main>
+    
+    <footer>
+        <p>Prova do segundo bimestre - Programação WEB</p>
+    </footer>
+
+    <dialog id="filter-modal">
+        <form id="filter-form">
+            <div class="modal-header">
+                <h2>Filtros</h2>
+                <button type="button" class="close-button" onclick="toggleModal()">X</button>
+            </div>
+            <div class="modal-content">
+                <div class="form-group">
+                    <label for="filter-type">Tipo:</label>
+                    <select id="filter-type" name="type">
+                        <option value="">Selecione</option>
+                        <option value="noticia">Notícia</option>
+                        <option value="release">Release</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filter-quantity">Quantidade:</label>
+                    <select id="filter-quantity" name="quantity">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filter-from">De:</label>
+                    <input type="date" id="filter-from" name="from">
+                </div>
+                <div class="form-group">
+                    <label for="filter-to">Até:</label>
+                    <input type="date" id="filter-to" name="to">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="applyFilters()">Aplicar</button>
+            </div>
+        </form>
+    </dialog>
+    
+
+    <script src="scripts.js"></script>
+</body>
+</html>

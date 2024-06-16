@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    overflow-x: hidden; /* Remove horizontal scrolling */
+}
+
+header, footer {
+    background-color: #4682b4;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+main {
+    background-color: #f0f0f0;
+    padding: 1em;
+    max-width: 100ch;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+header, main, footer {
+    border: 1px solid #ddd;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    padding: 0 1em;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    max-width: 600px; /* Define max width */
+    width: 100%; 
+    position: relative; 
+}
+
+.search-container input[type="text"] {
+    width: 100%; 
+    padding: 0.5em;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.search-container button {
+    position: absolute; 
+    right: 10px; 
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #4682b4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.search-container input[type="text"]:focus, .search-container button:focus {
+    outline: none;
+}
+
+.filter-icon-container {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.filter-count {
+    background-color: red;
+    border-radius: 50%;
+    padding: 0.2em 0.5em;
+    margin-left: 0.5em;
+    font-size: 0.8em;
+    color: white;
+}
+
+dialog {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1em;
+    width: 90%; 
+    max-width: 300px; 
+    box-sizing: border-box; 
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #4682b4;
+}
+
+.modal-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.modal-content .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1em;
+}
+
+.modal-footer button {
+    background-color: #4682b4; /* Cor de fundo azul */
+    color: white; /* Cor do texto branca */
+    border: none; /* Remover borda */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    border-radius: 3px; /* Bordas arredondadas */
+    font-size: 1em; /* Tamanho da fonte */
+    padding: 0.5em 2em; /* Aumentar padding horizontal e vertical */
+    width: 100%; /* Fazer o botão ocupar 100% da largura do container */
+}
+
+.modal-footer button:hover {
+    background-color: #315f86; /* Cor de fundo ao passar o mouse */
+}
+
+.news-item {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.news-item img {
+    width: 100%; 
+    height: auto; 
+    margin-bottom: 10px; 
+}
+
+.news-item-content p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #333;
+}
+
+.news-item h2,
+.news-item p {
+    margin: 0;
+}
+
+.news-item button {
+    background-color: #96a1aa;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 1em; 
+    padding: 0.2em 1em; 
+    width: 100%; 
+}
+
+.news-item button:hover {
+    background-color: #315f86;
+}
+
+
+@media (min-width: 600px) {
+    .news-item {
+        flex-direction: row; 
+    }
+
+    .news-item img {
+        width: 300px; 
+        margin-right: 10px; 
+        margin-bottom: 0; 
+    }
+
+    .news-item-content {
+        flex: 1; 
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none; 
+    padding: 0; 
+    margin-top: 1em;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination button {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.pagination .active button {
+    background-color: #4682b4;
+    color: white;
+}
+
+.pagination button:hover:not(.active) {
+    background-color: #ddd;
+}
+
+@media (min-width: 760px) {
+    dialog {
+        width: 90%;
+        max-width: 800px;
+    }
+
+    .modal-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+
+    .modal-content .form-group {
+        grid-column: span 1; 
+    }
+}
