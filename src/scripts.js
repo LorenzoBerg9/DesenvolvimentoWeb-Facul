@@ -60,7 +60,7 @@ function applyFilters() {
 }
 
 async function fetchNews(params) {
-    const baseUrl = 'http://servicodados.ibge.gov.br/api/v3/noticias';
+    const baseUrl = 'https://servicodados.ibge.gov.br/api/v3/noticias'; // Alterado para HTTPS
     params.set('qtd', params.get('quantity') || 10);
 
     const url = `${baseUrl}?${params.toString()}`;
