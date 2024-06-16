@@ -80,6 +80,7 @@ async function fetchNews(params) {
     }
 }
 
+
 function displayNews(news) {
     const newsContainer = document.getElementById('news-list');
     newsContainer.innerHTML = '';
@@ -114,7 +115,7 @@ function displayNews(news) {
 
         if (item.imagens) {
             const images = JSON.parse(item.imagens);
-            const imgURL = `https://agenciadenoticias.ibge.gov.br/${images.image_intro}`;
+            const imgURL = `https://agenciadenoticias.ibge.gov.br/${images.image_intro}`; // Certifique-se de que está usando HTTPS
             const img = document.createElement('img');
             img.src = imgURL;
             listItem.appendChild(img);
