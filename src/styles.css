@@ -40,12 +40,12 @@ header, main, footer {
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     max-width: 600px; /* Define max width */
-    width: 100%; 
-    position: relative; 
+    width: 100%; /* Make container occupy full width */
+    position: relative; /* Allow absolute positioning of the button */
 }
 
 .search-container input[type="text"] {
-    width: 100%; 
+    width: 100%; /* Make input occupy full width */
     padding: 0.5em;
     font-size: 1em;
     border: none;
@@ -54,8 +54,8 @@ header, main, footer {
 }
 
 .search-container button {
-    position: absolute; 
-    right: 10px; 
+    position: absolute; /* Position button inside container */
+    right: 10px; /* Offset button from right edge */
     background: none;
     border: none;
     font-size: 1.2em;
@@ -93,9 +93,9 @@ dialog {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 1em;
-    width: 90%; 
-    max-width: 300px; 
-    box-sizing: border-box; 
+    width: 90%; /* Adjusted to occupy 90% width of the screen */
+    max-width: 300px; /* Max width */
+    box-sizing: border-box; /* Include padding and border in width and height */
 }
 
 dialog::backdrop {
@@ -150,22 +150,22 @@ dialog::backdrop {
 
 .news-item {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column; /* Change to column */
     align-items: flex-start;
     margin-bottom: 40px;
 }
 
 .news-item img {
-    width: 100%; 
-    height: auto; 
-    margin-bottom: 10px; 
+    width: 100%; /* Adjust to 100% of container width */
+    height: auto; /* Adjust image height automatically */
+    margin-bottom: 10px; /* Added spacing between image and text */
 }
 
 .news-item-content p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     font-weight: normal;
-    color: #333;
+    color: #333; /* Text color */
 }
 
 .news-item h2,
@@ -179,37 +179,37 @@ dialog::backdrop {
     border: none;
     cursor: pointer;
     border-radius: 3px;
-    font-size: 1em; 
-    padding: 0.2em 1em; 
-    width: 100%; 
+    font-size: 1em; /* Font size adjustment */
+    padding: 0.2em 1em; /* Added padding */
+    width: 100%; /* Make button occupy full width */
 }
 
 .news-item button:hover {
     background-color: #315f86;
 }
 
-
+/* Media Queries for responsiveness */
 @media (min-width: 600px) {
     .news-item {
-        flex-direction: row; 
+        flex-direction: row; /* Align in row for larger screens */
     }
 
     .news-item img {
-        width: 300px; 
-        margin-right: 10px; 
-        margin-bottom: 0; 
+        width: 300px; /* Fixed image size */
+        margin-right: 10px; /* Spacing between image and text */
+        margin-bottom: 0; /* Remove bottom margin when in row */
     }
 
     .news-item-content {
-        flex: 1; 
+        flex: 1; /* Make content occupy remaining space */
     }
 }
 
 .pagination {
     display: flex;
     justify-content: center;
-    list-style: none; 
-    padding: 0; 
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default <ul> padding */
     margin-top: 1em;
 }
 
@@ -246,6 +246,6 @@ dialog::backdrop {
     }
 
     .modal-content .form-group {
-        grid-column: span 1; 
+        grid-column: span 1; /* Ensure each form-group spans one column */
     }
 }
